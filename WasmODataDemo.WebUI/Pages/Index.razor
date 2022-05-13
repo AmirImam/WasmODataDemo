@@ -1,0 +1,38 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+<button @onclick=Clear>Clear</button>
+<div class="row">
+    <div class="col-6">
+        <button @onclick=ODataLoad>Simple OData Load</button>
+        <table>
+            <tbody>
+                <Virtualize Items=productsList>
+                    <tr>
+                        <td>@context.ProductName</td>
+                        <td>@context.MerchantName</td>
+                        <td>@context.SerialNumber</td>
+                        <td>@context.Price</td>
+                    </tr>
+                </Virtualize>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-6">
+        <button @onclick=HttpLoad>Http Load</button>
+        <table>
+            <tbody>
+                <Virtualize Items=productsList>
+                    <tr>
+                        <td>@context.ProductName</td>
+                        <td>@context.MerchantName</td>
+                        <td>@context.SerialNumber</td>
+                        <td>@context.Price</td>
+                    </tr>
+                </Virtualize>
+            </tbody>
+        </table>
+    </div>
+
+</div>
